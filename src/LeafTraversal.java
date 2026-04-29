@@ -1,5 +1,7 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 class TreeNode {
     String data;
@@ -16,18 +18,24 @@ class TreeNode {
 }
 
 public class LeafTraversal {
-    public static void printLeavesLeftToRight(TreeNode node) {
-        if (node == null) {
+    public static void printLeavesBFS(TreeNode root) {
+        if (root == null) {
             return;
         }
 
-        if (node.children.isEmpty()) {
-            System.out.print(node.data + " ");
-            return; 
-        }
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root); 
 
-        for (TreeNode child : node.children) {
-            printLeavesLeftToRight(child);
+        while (!queue.isEmpty()) {
+            TreeNode current = queue.poll(); 
+
+            if (current.children.isEmpty()) {
+                System.out.print(current.data + " ");
+            } else {
+                for (TreeNode child : current.children) {
+                    queue.offer(child);
+                }
+            }
         }
     }
 
@@ -64,7 +72,7 @@ public class LeafTraversal {
         D.addChild(M);
         M.addChild(N);
 
-        System.out.println("Hasil penelusuran leaf nodes dari kiri ke kanan:");
-        printLeavesLeftToRight(A);
+        System.out.println("Hasil penelusuran leaf nodes menggunakan BFS (Level-by-Level):");
+        printLeavesBFS(A);
     }
 }

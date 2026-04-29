@@ -1,18 +1,12 @@
-## Getting Started
+1. Under what conditions would a pre-order and a breadth-first traversal be the same?
+Penelusuran pre-order dan breadth-first akan menghasilkan urutan yang persis sama jika pohon tersebut berbentuk linear (setiap node maksimal hanya memiliki satu anak, sehingga bentuknya memanjang ke bawah menyerupai linked list), atau jika pohon tersebut hanya terdiri dari maksimal dua level (hanya ada root dan anak-anak langsungnya).
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+2. Suppose a directory structure has N files stored in n directories. Answer the following questions:
+a. What is the run time of a traversal that prints out the directory names?
+Untuk mencetak nama direktori, algoritma perlu menelusuri (traverse) setiap direktori yang ada di dalam struktur tersebut tepat satu kali. Karena hanya ada (n) direktori, maka kompleksitas waktunya linear terhadap jumlah direktori tersebut o(n).
 
-## Folder Structure
+b. What is the run time of a traversal that prints out the file names?
+Untuk mengakses dan mencetak seluruh nama file (leaf nodes), algoritma penelusuran harus melewati seluruh struktur direktori penyusunnya terlebih dahulu. Dengan demikian, algoritma akan mengunjungi (n) direktori dan memproses (N) file sehingga kompleksitasnya o(n+N), namun karena pada soal yang di minta hanya print file makan kompleksitasnya o(n)
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+c. How does your answer to Part b of this question change if you know that N = o(n)?
+jawabannya tetap sama, karena cara pengecekannya itu linear sehingga kompleksitasnya tetap sama yaitu o(n).
