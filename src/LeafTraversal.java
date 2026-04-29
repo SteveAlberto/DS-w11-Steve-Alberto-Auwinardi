@@ -24,7 +24,7 @@ public class LeafTraversal {
         }
 
         Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root); 
+        queue.add(root); 
 
         while (!queue.isEmpty()) {
             TreeNode current = queue.poll(); 
@@ -33,7 +33,7 @@ public class LeafTraversal {
                 System.out.print(current.data + " ");
             } else {
                 for (TreeNode child : current.children) {
-                    queue.offer(child);
+                    queue.add(child);
                 }
             }
         }

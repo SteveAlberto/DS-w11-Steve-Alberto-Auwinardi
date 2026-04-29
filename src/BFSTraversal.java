@@ -24,7 +24,7 @@ public class BFSTraversal {
         }
 
         Queue<TreeNode> queue = new LinkedList<>();
-        queue.offer(root); 
+        queue.add(root); 
         int currentDepth = 0;
 
         while (!queue.isEmpty()) {
@@ -41,7 +41,7 @@ public class BFSTraversal {
                 TreeNode currentNode = queue.poll(); 
                 
                 for (TreeNode child : currentNode.children) {
-                    queue.offer(child);
+                    queue.add(child);
                 }
             }
             currentDepth++;
