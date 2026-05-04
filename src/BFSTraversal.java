@@ -63,11 +63,11 @@ public class BFSTraversal {
         D.addChild(G);
         F.addChild(H);
 
-        System.out.print("Depth 1 (Target: B C D): ");
+        System.out.print("Depth 1 : ");
         printAtDepthBFS(A, 1);
         System.out.println();
 
-        System.out.print("Depth 2 (Target: E F G): ");
+        System.out.print("Depth 2 : ");
         printAtDepthBFS(A, 2);
         System.out.println();
     }

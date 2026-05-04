@@ -6,7 +6,7 @@ a. What is the run time of a traversal that prints out the directory names?
 Untuk mencetak nama direktori, algoritma perlu menelusuri (traverse) setiap direktori yang ada di dalam struktur tersebut tepat satu kali. Karena hanya ada (n) direktori, maka kompleksitas waktunya linear terhadap jumlah direktori tersebut o(n).
 
 b. What is the run time of a traversal that prints out the file names?
-Untuk mengakses dan mencetak seluruh nama file (leaf nodes), algoritma penelusuran harus melewati seluruh struktur direktori penyusunnya terlebih dahulu. Dengan demikian, algoritma akan mengunjungi (n) direktori dan memproses (N) file sehingga kompleksitasnya o(n+N), namun karena pada soal yang di minta hanya print file makan kompleksitasnya o(n)
+Untuk mencetak seluruh nama file (leaf nodes), algoritma tetap harus menelusuri seluruh direktori penyusunnya terlebih dahulu untuk menemukan file-file tersebut. Algoritma akan mengunjungi (n) direktori dan memproses (N) file, sehingga kompleksitas akhirnya adalah O(n + N).
 
 c. How does your answer to Part b of this question change if you know that N = o(n)?
-jawabannya tetap sama, karena cara pengecekannya itu linear sehingga kompleksitasnya tetap sama yaitu o(n).
+Jawabannya berubah menjadi O(N). Berdasarkan aturan Big-O Notation, karena N (jumlah file) mendominasi n (jumlah direktori), faktor (n) menjadi tidak signifikan untuk dihitung dan dapat diabaikan. Sehingga O(n + N) disederhanakan menjadi O(N).
